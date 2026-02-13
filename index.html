@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="assets/css/nice-select.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
 </head>
 
 <body>
@@ -339,25 +342,33 @@
                             <div class="col-lg-3">
                                 <div class="form-group">
                                     <label>Pick Up Location</label>
-                                    <input type="text" id="pickup" class="form-control" placeholder="Type Location">
+                                    <input type="text" id="pickup" class="form-control" placeholder="Pick Up Location" required>
                                 </div>
                             </div>
 
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label>Drop Off Location</label>
-                                    <input type="text" id="dropoff" class="form-control" placeholder="Type Location">
+                                    <label>Drop Location</label>
+                                    <input type="text" id="dropoff" class="form-control" placeholder="Drop Location" required>
                                 </div>
                             </div>
 
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label>Passengers</label>
-                                    <input type="text" id="passengers" class="form-control" placeholder="Passengers">
+                                    <label>Pick Up Date</label>
+                                    <input type="text" id="pickupDate" class="form-control date-picker" placeholder="MM/DD/YY" required>
                                 </div>
                             </div>
 
                             <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for="pickupTime">Pick Up Time</label>
+                                    <input type="text" id="pickupTime" class="form-control" placeholder="Select Time" required>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-4">
                                 <div class="form-group">
                                     <label>Cab Type</label>
                                     <select id="cabType" class="select">
@@ -369,49 +380,39 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-3">
+                            <div class="col-lg-4">
                                 <div class="form-group">
-                                    <label>Pick Up Date</label>
-                                    <input type="text" id="pickupDate" class="form-control date-picker" placeholder="MM/DD/YY">
+                                    <label>Number of Passengers</label>
+                                    <input type="text" id="passengers" class="form-control" placeholder="Number of Passengers" required>
                                 </div>
                             </div>
 
-                            <div class="col-lg-2">
+                            <div class="col-lg-4">
                                 <div class="form-group">
-                                    <label>Pick Up Time</label>
-                                    <input type="text" id="pickupTime" class="form-control time-picker" placeholder="00:00 AM">
+                                    <label>Full Name</label>
+                                    <input type="text" id="pickup" class="form-control" placeholder="Full Name" required>
                                 </div>
                             </div>
 
-                            <div class="col-lg-2">
+                            <div class="col-lg-4">
                                 <div class="form-group">
-                                    <label>Driver Age</label>
-                                    <select id="driverAge" class="select">
-                                        <option value="">Choose Age</option>
-                                        <option value="Any Age">Any Age</option>
-                                        <option value="25">25</option>
-                                        <option value="30">30</option>
-                                        <option value="35">35</option>
-                                        <option value="40">40</option>
-                                    </select>
+                                    <label>Mobile Number</label>
+                                    <input type="text" id="pickup" class="form-control" placeholder="Mobile Number" required>
                                 </div>
                             </div>
 
-                            <div class="col-lg-3">
+                            <div class="col-lg-4">
                                 <div class="form-group">
-                                    <label>Cab Model</label>
-                                    <select id="cabModel" class="select">
-                                        <option value="">Choose Model</option>
-                                        <option value="All Model">All Model</option>
-                                        <option value="M5 2022">M5 2022</option>
-                                        <option value="Q7 2021">Q7 2021</option>
-                                    </select>
+                                    <label>Email Addres</label>
+                                    <input type="text" id="pickup" class="form-control" placeholder="Email Addres" >
                                 </div>
                             </div>
+
+                            <div class="col-lg-2"></div>
 
                             <div class="col-lg-2 align-self-end">
                                 <button class="theme-btn" type="submit">
-                                    Book Car <i class="fas fa-arrow-right"></i>
+                                    Book Car 
                                 </button>
                             </div>
 
@@ -1757,45 +1758,57 @@
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
 
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"1190e059c5bc497bafd35e121aae37b1","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-<script>
-document.getElementById("taxiForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"1190e059c5bc497bafd35e121aae37b1","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 
-    let pickup = document.getElementById("pickup").value.trim();
-    let dropoff = document.getElementById("dropoff").value.trim();
-    let passengers = document.getElementById("passengers").value.trim();
-    let cabType = document.getElementById("cabType").value.trim();
-    let pickupDate = document.getElementById("pickupDate").value.trim();
-    let pickupTime = document.getElementById("pickupTime").value.trim();
-    let driverAge = document.getElementById("driverAge").value.trim();
-    let cabModel = document.getElementById("cabModel").value.trim();
+    <script>
+    document.getElementById("taxiForm").addEventListener("submit", function(e) {
+        e.preventDefault();
 
-    if (!pickup || !dropoff) {
-        alert("Please fill pickup and drop location");
-        return;
-    }
+        let pickup = document.getElementById("pickup").value.trim();
+        let dropoff = document.getElementById("dropoff").value.trim();
+        let passengers = document.getElementById("passengers").value.trim();
+        let cabType = document.getElementById("cabType").value.trim();
+        let pickupDate = document.getElementById("pickupDate").value.trim();
+        let pickupTime = document.getElementById("pickupTime").value.trim();
+        let driverAge = document.getElementById("driverAge").value.trim();
+        let cabModel = document.getElementById("cabModel").value.trim();
 
-    let message =
-        "New Taxi Booking%0A%0A" +
-        "Pickup: " + encodeURIComponent(pickup) + "%0A" +
-        "Drop: " + encodeURIComponent(dropoff) + "%0A" +
-        "Passengers: " + encodeURIComponent(passengers) + "%0A" +
-        "Cab Type: " + encodeURIComponent(cabType) + "%0A" +
-        "Date: " + encodeURIComponent(pickupDate) + "%0A" +
-        "Time: " + encodeURIComponent(pickupTime) + "%0A" +
-        "Driver Age: " + encodeURIComponent(driverAge) + "%0A" +
-        "Cab Model: " + encodeURIComponent(cabModel);
+        if (!pickup || !dropoff) {
+            alert("Please fill pickup and drop location");
+            return;
+        }
 
-    let phone = "91875041175"; // India whatsapp number
+        let message =
+            "New Taxi Booking%0A%0A" +
+            "Pickup: " + encodeURIComponent(pickup) + "%0A" +
+            "Drop: " + encodeURIComponent(dropoff) + "%0A" +
+            "Passengers: " + encodeURIComponent(passengers) + "%0A" +
+            "Cab Type: " + encodeURIComponent(cabType) + "%0A" +
+            "Date: " + encodeURIComponent(pickupDate) + "%0A" +
+            "Time: " + encodeURIComponent(pickupTime) + "%0A" +
+            "Driver Age: " + encodeURIComponent(driverAge) + "%0A" +
+            "Cab Model: " + encodeURIComponent(cabModel);
 
-    let whatsappURL = "https://wa.me/" + phone + "?text=" + message;
+        let phone = "918810381691"; // India whatsapp number
 
-    window.open(whatsappURL, "_blank");
-});
-</script>
+        let whatsappURL = "https://wa.me/" + phone + "?text=" + message;
 
+        window.open(whatsappURL, "_blank");
+    });
+    </script>
+
+    
+    <script>
+        flatpickr("#pickupTime", {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "h:i K",
+            time_24hr: false
+        });
+    </script>
 
 
 </body>
